@@ -1,0 +1,45 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "baidu-ocr",
+  "title": "Baidu OCR",
+  "description": "Use Baidu OCR API to recognize text.",
+  "icon": "command-icon.png",
+  "author": "Humber",
+  "categories": [
+    "Applications"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "clipboard-ocr",
+      "title": "Clipboard OCR",
+      "description": "Recognize texts from image in your clipboard.",
+      "mode": "view"
+    },
+    {
+      "name": "snapshot-ocr",
+      "title": "Snapshot OCR",
+      "description": "Recognize texts after snapshot from your screen.",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.51.1",
+    "got": "^12.6.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "1.0.5",
+    "@types/node": "18.8.3",
+    "@types/react": "18.0.9",
+    "eslint": "^7.32.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
