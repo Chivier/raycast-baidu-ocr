@@ -17,6 +17,10 @@ async function recognizeText(filepath: string): Promise<string> {
     },
     form: {
       image: getFileContentAsBase64(filepath),
+      'detect_direction': 'false',
+      'detect_language': 'false',
+      'paragraph': 'false',
+      'probability': 'false',
     },
   };
 
