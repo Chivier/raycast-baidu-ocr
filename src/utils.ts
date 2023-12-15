@@ -26,12 +26,14 @@ async function recognizeText(filepath: string): Promise<string> {
         showHUD("❌ API Key Error!");
         reject("");
       } else {
-        // console.log("ok");
-        resolve(
-          JSON.parse(response.body)
-            .words_result.map((item: { words: string }) => item.words)
-            .join("\n")
-        );
+        const wordsResult = JSON.parse(response.body).words_result;
+        if (wordsResult) {
+          resolve(
+            wordsResult.map((item: { words: string }) => item.words).join("\n")
+          );
+        } else {
+          resolve("");
+        }
       }
     });
   });

@@ -3,7 +3,7 @@ import { recognizeText } from "./utils";
 
 export default async function Command() {
   const { text, file } = await Clipboard.read();
-  if (text.length < 5) {
+  if (!text || !text.length || text.length < 5) {
     return await showHUD("❌ This is not an image");
   }
   if (text.substring(0, 5) != "Image") {
